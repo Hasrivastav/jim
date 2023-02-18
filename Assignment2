@@ -19,17 +19,6 @@ static void printLinkedList(SinglyLinkedListNode head) {
 
 
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  inserting node at the tail....
  
  static SinglyLinkedListNode insertNodeAtTail(SinglyLinkedListNode head, int data) {
@@ -47,3 +36,20 @@ static void printLinkedList(SinglyLinkedListNode head) {
   iter.next=newNode;
   return head;
     }
+
+
+
+
+
+ADD THE NODE AT THE STARTING OF THE LINKEDLIST
+   
+   static SinglyLinkedListNode insertNodeAtHead(SinglyLinkedListNode llist, int data) {
+ SinglyLinkedListNode newNode = new SinglyLinkedListNode(data);
+   newNode.next=llist;
+    llist=newNode;
+   
+   
+   return llist;
+   
+    
+  }
