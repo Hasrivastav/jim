@@ -53,3 +53,80 @@ ADD THE NODE AT THE STARTING OF THE LINKEDLIST
    
     
   }
+  
+  inserting node at a specific position....
+  
+    public static SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode llist, int data, int position) {
+    // Write your code here
+    SinglyLinkedListNode newNode=new SinglyLinkedListNode(data);
+    SinglyLinkedListNode curr=llist;
+    if(llist==null){
+     llist=newNode;
+    }
+    for(int i=0;i<position;i++){
+        curr=curr.next;
+    }
+    newNode.next=curr.next;
+    curr.next=newNode;
+    
+    return llist;
+
+    }
+    
+    
+    
+    Deleting nodes at a specifici position
+     public static SinglyLinkedListNode deleteNode(SinglyLinkedListNode head, int position) {
+    // Write your code here
+    SinglyLinkedListNode iter=head;
+    if(position == 0){
+    head = head.next;
+    return head;
+}
+    for(int i=0;i<position-1;i++){
+        iter=iter.next;
+        
+    }
+    iter.next=iter.next.next;
+    
+    return head;
+    
+
+    }
+    
+    
+    
+    
+    Data at the postion fro m the tail............
+    
+     public static int getNode(SinglyLinkedListNode llist, int positionFromTail) {
+    // Write your code hereIllegal static declaration in inner class Solution.
+     List<Integer> nodesList = new ArrayList<>();
+        while (llist != null) {
+            nodesList.add(llist.data);
+            llist = llist.next;
+        }
+        return nodesList.get(nodesList.size() - positionFromTail - 1);
+    }
+
+}
+
+
+Cycle detection of linked list....................
+ static boolean hasCycle(SinglyLinkedListNode head) {
+
+        SinglyLinkedListNode high = head;
+        SinglyLinkedListNode low= head;
+    
+    while( high != null && high.next != null) {
+        high = high.next.next;
+        low = low.next;
+        
+        if(low.equals(high)) {
+            return true;
+        }
+    }
+    return false;
+    }
+
+
